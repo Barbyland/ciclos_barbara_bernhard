@@ -1,35 +1,48 @@
 alert("Bienvenidos a Barbyland")
-
-let nombreUsuario = prompt("Ingrese su nombre");
-
-let apellidoUsuario = prompt("Ingrese su apellido");
-
-const edadPersona= prompt("ingresa tu edad");
-
-alert ("Bienvenido" + nombreUsuario +" Ahora siga los siguientes pasos");
-
-let entrada =  prompt("SELECCIONAR MÚSICA DE 1 A 4") + "podes poner ESC para salir";
-let ingresados = '';
-while (entrada != 'ESC') {
-    switch (entrada) {
-        case "1":
-            alert("Jazz");
-            break;
-        case "2":
-            alert("Pop");
-            break;
-        case "3":
-            alert("Rock");
-            break;
-        case "4":
-            alert("Salsa");
-            break;
-        default:
-            alert("Metal");
-            break;
+ 
+let nombreUsuario = prompt("Ingresá tu nombre");
+console.log(nombreUsuario)
+ 
+let apellidoUsuario = prompt("Ingresá tu apellido");
+console.log(apellidoUsuario)
+ 
+alert ("Bienvenido " + nombreUsuario +" Ahora seguí los siguientes pasos");
+ 
+const fechaNacimiento = document.getElementById("fechaNacimiento");
+const edad = document.getElementById("edad");
+ 
+const calcularEdad = (fechaNacimiento) => {
+    const fechaActual = new Date();
+    const anoActual = parseInt(fechaActual.getFullYear());
+    const mesActual = parseInt(fechaActual.getMonth()) + 1;
+    const diaActual = parseInt(fechaActual.getDate());
+ 
+    // 2016-07-11
+    const anoNacimiento = parseInt(String(fechaNacimiento).substring(0, 4));
+    const mesNacimiento = parseInt(String(fechaNacimiento).substring(5, 7));
+    const diaNacimiento = parseInt(String(fechaNacimiento).substring(8, 10));
+ 
+    let edad = anoActual - anoNacimiento;
+    if (mesActual < mesNacimiento) {
+        edad--;
+    } else if (mesActual === mesNacimiento) {
+        if (diaActual < diaNacimiento) {
+            edad--;
+        }
     }
-    entrada = prompt("SELECCIONAR MUSICA DE 1 A 4");
-}
+    return edad;
+};
+ 
+window.addEventListener('load', function () {
+ 
+    fechaNacimiento.addEventListener('change', function () {
+        if (this.value) {
+            edad.innerText = `La edad es: ${calcularEdad(this.value)} años`;
+        }
+    });
+ 
+});
+
 
 
 
