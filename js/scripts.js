@@ -17,7 +17,7 @@ const calcularEdad = (fechaNacimiento) => {
     const mesActual = parseInt(fechaActual.getMonth()) + 1;
     const diaActual = parseInt(fechaActual.getDate());
  
-    // 2016-07-11
+    // 2022-07-11
     const anoNacimiento = parseInt(String(fechaNacimiento).substring(0, 4));
     const mesNacimiento = parseInt(String(fechaNacimiento).substring(5, 7));
     const diaNacimiento = parseInt(String(fechaNacimiento).substring(8, 10));
@@ -42,6 +42,14 @@ window.addEventListener('load', function () {
     });
  
 });
+
+
+const generosMusicales = ["rock","pop","punk","metal","punk"];
+
+console.log( generosMusicales.indexOf('rock') ) // ⇒ 0
+console.log( generosMusicales.indexOf('metal') ) // ⇒ 3
+console.log( generosMusicales.indexOf('indie') ) // ⇒ -1
+
 
 
 
