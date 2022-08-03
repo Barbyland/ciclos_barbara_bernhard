@@ -1,12 +1,28 @@
-alert("Bienvenidos a Barbyland")
- 
+alert ("Descubre los artistas y generos musicales escuchados por las mujeres ") 
+
+let IngresarGenero = prompt("Ingresá tu genero Femenino/Masculino");
+const Genero = "Femenino";
+
+switch(Genero){
+    case "Femenino":
+        console.log("Sos Bienvenida");
+        break;
+    case "Masculino":
+        console.log("No queremos Masculinos");
+        break;
+    default:
+        console.log ("Lo siento, no aplicas")  
+        break;      
+
+}
+
 let nombreUsuario = prompt("Ingresá tu nombre");
 console.log(nombreUsuario)
  
 let apellidoUsuario = prompt("Ingresá tu apellido");
 console.log(apellidoUsuario)
  
-alert ("Bienvenido " + nombreUsuario +" Ahora seguí los siguientes pasos");
+alert ("Bienvenido " + nombreUsuario +  apellidoUsuario + " Ahora seguí los siguientes pasos");
  
 const fechaNacimiento = document.getElementById("fechaNacimiento");
 const edad = document.getElementById("edad");
