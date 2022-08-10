@@ -1,29 +1,21 @@
 alert ("Descubre los artistas y generos musicales escuchados por las mujeres ") 
 
 let IngresarGenero = prompt("Ingresá tu genero Femenino/Masculino");
-const Genero = "Femenino";
-
-switch(Genero){
-    case "Femenino":
-        console.log("Sos Bienvenida");
-        break;
-    case "Masculino":
-        console.log("No queremos Masculinos");
-        break;
-    default:
-        console.log ("Lo siento, no aplicas")  
-        break;      
-
+let resultadoA= "Femenino";
+let resultadoB= "Masculino";
+let resultadoC= "";
+if ((resultadoA=="Masculino") && (resultadoC== "")){
+        alert=("No aceptamos Masculinos o genero indistinto");
+} else{ 
+        alert=("Sos Bienvenida" + IngresarGenero);
 }
 
-let nombreUsuario = prompt("Ingresá tu nombre");
+let nombreUsuario = (localStorage.getItem('nombre'), prompt("Ingresá tu nombre"));
 console.log(nombreUsuario)
- 
 let apellidoUsuario = prompt("Ingresá tu apellido");
-console.log(apellidoUsuario)
- 
+console.log(apellidoUsuario);
 alert ("Bienvenido " + nombreUsuario +  apellidoUsuario + " Ahora seguí los siguientes pasos");
- 
+
 const fechaNacimiento = document.getElementById("fechaNacimiento");
 const edad = document.getElementById("edad");
  
@@ -59,13 +51,11 @@ window.addEventListener('load', function () {
  
 });
 
-
 const generosMusicales = ["rock","pop","punk","metal","punk"];
 
 console.log( generosMusicales.indexOf('rock') ) // ⇒ 0
 console.log( generosMusicales.indexOf('metal') ) // ⇒ 3
 console.log( generosMusicales.indexOf('indie') ) // ⇒ -1
-
 
 
 
